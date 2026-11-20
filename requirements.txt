@@ -3,4 +3,4 @@ uvicorn
 joblib
 Pillow
 python-multipart
-scikit learn
+scikit-learn
