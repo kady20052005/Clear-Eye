@@ -4,3 +4,4 @@ joblib
 Pillow
 python-multipart
 scikit-learn==1.6.1
+NumPy
