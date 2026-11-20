@@ -2,4 +2,4 @@ fastapi
 uvicorn
 joblib
 Pillow
-python hyphen multipart
+python_hyphen_multipart
