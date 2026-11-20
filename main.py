@@ -3,7 +3,7 @@ import joblib
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
-
+import numpy as np
 app = FastAPI()
 
 # السماح للواجهة بالاتصال بالخادم
@@ -31,5 +31,5 @@ async def predict(file: UploadFile = File(...)):
     features = preprocess_image(image)
 
     # التنبؤ بالفئة
-    prediction = model.predict([features])[0]
+prediction = model.predict(np.array(features).reshape(1,-1))[O]
     return {"prediction": str(prediction)}
