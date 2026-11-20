@@ -33,4 +33,3 @@ async def predict(file: UploadFile = File(...)):
     # التنبؤ بالفئة
     prediction = model.predict([features])[0]
     return {"prediction": str(prediction)}
-scikit-learn==1.6.1
