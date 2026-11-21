@@ -32,4 +32,4 @@ async def predict(file: UploadFile = File(...)):
 
     # التنبؤ بالفئة
 prediction = model.predict(np.array(features).reshape(1,-1))[O] 
- return {"prediction": str(prediction)}
+   return {"prediction": str(prediction)}
