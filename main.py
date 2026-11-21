@@ -18,8 +18,16 @@ app.add_middleware(
 
 model = joblib.load("best_svm_model.pkl")
 
-categories = ['Eye inflammation', 'Healthy eye', 'Hordeolum']
-
+def preprocess_image(image: Image.Image) -> np.ndarray:
+    image = image.resize((300, 300))
+    gray_img = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2GRAY)
+    features = hog(
+        gray_img,
+        orientations=9,
+        pixels_per_cell=(16, 16),
+        cells_per_block=(2, 2),
+        block_norm='L2-Hys'
+    )
     return features.reshape(1, -1)
 
 @app.post("/predict")
