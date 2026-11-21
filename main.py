@@ -37,6 +37,6 @@ async def predict(file: UploadFile):
         image = Image.open(io.BytesIO(contents))
         features = preprocess_image(image)
         prediction = model.predict(features)[0]
-        return {"prediction": str(prediction)}
+        return {"prediction": categories[lprediction]
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
