@@ -31,5 +31,5 @@ async def predict(file: UploadFile = File(...)):
     features = preprocess_image(image)
 
     # التنبؤ بالفئة
-prediction = model.predict(np.array(features).reshape(1,-1))[O]
+prediction = model.predict(np.array(features).reshape(1,-1))[O] 
 return {"prediction": str(prediction)}
